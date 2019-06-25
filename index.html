@@ -32,24 +32,16 @@
             <input id="f" type="file" accept=".jpg,.png,.jpeg" class="col-5 mb-3 form-control form-control-lg"
                 readonly="readonly">
         </div>
-        <div class="row justify-content-center">
-            <img id="i" height="500" width="500" />
+        <div class="row justify-content-center mb-3">
+                <canvas style="border:1px solid #ccc; width: 100%; height: 100%;" id="micanvas"></canvas>
         </div>
-
+        <div class="row justify-content-center">
+            <button type="submit" class="col-2 btn btn-block btn-lg btn-primary">
+                B/N
+            </button>
+        </div>
     </form>
 </body>
-<script>
-    $('#f').on('change', function (ev) {
-        var f = ev.target.files[0];
-        var fr = new FileReader();
-
-        fr.onload = function (ev2) {
-            console.dir(ev2);
-            $('#i').attr('src', ev2.target.result);
-        };
-
-        fr.readAsDataURL(f);
-    });
-</script>
+<script src="button.js"></script>
 
 </html>
